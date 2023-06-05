@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="webjars/bootstrap/5.2.3/css/bootstrap.css">
+</head>
+<body>
+<table class="table" border="1px" style="border:1px blue">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Producer</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody style="text-align: center">
+  <tr th:each="p: ${list}" th:object="${p}">
+    <td th:text="${p.id}"></td>
+    <td th:text="${p.name}"></td>
+    <td th:text="${p.price}"></td>
+    <td th:text="${p.description}"></td>
+    <td th:text="${p.producer}"></td>
+    <td><a th:href="@{products/updateForm/{id}(id=*{id})}">Update Product</a></td>
+  </tr>
+  <tr>
+    <td><a th:href="@{/products/createForm}">Create New Product</a></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td>Song Name</td>
+    <td>Singer Name</td>
+    <td>Category</td>
+    <td>File Mp3</td>
+  </tr>
+  <tr th:each="p: ${Songs}" th:object="${p}">
+    <td th:text="*{song_name}"></td>
+    <td th:text="*{singer_name}"></td>
+    <td th:text="*{category}"></td>
+    <td th:text="*{link}"></td>
+
+  </tr>
+</table>
+
+
+</body>
+</html>
