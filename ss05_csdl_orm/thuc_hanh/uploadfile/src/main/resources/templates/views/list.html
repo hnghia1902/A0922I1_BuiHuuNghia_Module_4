@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 100%;
+        }
+
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Link</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="s : ${songs}">
+        <td th:text="${s.id}"></td>
+        <td th:text="${s.name}"></td>
+        <td>
+            <audio
+                    controls
+                    th:src="@{/file/{id}(id=${s.id})}">
+                </a>
+            </audio>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
