@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>ID: </td>
+        <td th:text="${blog_object.id}"></td>
+    </tr>
+    <tr>
+        <td>Name: </td>
+        <td th:text="${blog_object.name}"></td>
+    </tr>
+    <tr>
+        <td>Content: </td>
+        <td th:text="${blog_object.content}"></td>
+    </tr>
+    <tr>
+        <td ><a th:href="@{/blog/blogUpdateForm{id}(id=*{id})}">Cập nhật</a></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -13,8 +13,11 @@
         <td>Name</td>
     </tr>
     <tr th:each="blog: ${list}" th:object="${blog}">
-        <td  th:text="*{id}"></td>
+        <td th:text="*{id}"></td>
         <td th:text="*{name}"></td>
+        <td ><a th:href="@{/blog/blog{id}(id=*{id})}">Xem chi tiết</a></td>
+        <td ><a th:href="@{/blog/blogUpdateForm{id}(id=*{id})}">Cập nhật</a></td>
+        <td ><a th:href="@{/blog/delete{id}(id=*{id})}">Xóa Blog</a></td>
     </tr>
 </table>
 </body>
